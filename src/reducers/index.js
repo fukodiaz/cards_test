@@ -54,9 +54,12 @@ const reducer = (state = initialState, action) => {
 			}
 
 		case 'DELETE_ITEM':
+			const visCards = deleteItem(action.payload, state.visibleCards);
 			return {
 				...state,
-				visibleCards: deleteItem(action.payload, state.visibleCards)
+				visibleCards: visCards,
+				cardsLiked: defineLikedCards(visCards)
+
 			}
 
 		case 'LIKE_ITEM':

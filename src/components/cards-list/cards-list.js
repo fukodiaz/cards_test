@@ -16,12 +16,13 @@ class CardsList extends Component {
 	}
 
 	createCard = (card) => {
-		const {id, url, isLiked} = card;
+		const {id, url, isLiked, name} = card;
 		const {deleteItem, likeItem} = this.props;
 
 		return (
 			<li key={id} className={styles.itemCard}>
-				<CardItem url={url} deleteItem={() => deleteItem(id)} 
+				<CardItem url={url} name={name}
+								deleteItem={() => deleteItem(id)} 
 								likeItem={() => likeItem(id)}
 								isLiked={isLiked} />
 			</li>

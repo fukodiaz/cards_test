@@ -21,6 +21,7 @@ export default class CardsService {
 		return {
 			id: item.id,
 			url: item.image_link,
+			name: item.latin_name,
 			isLiked: false
 		};
 	};
